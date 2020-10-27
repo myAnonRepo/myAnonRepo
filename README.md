@@ -15,25 +15,14 @@ Training
 ```shell
 ./tools/dist_train.sh <CONFIG_FILE> <GPU_NUM> --validate --work_dir <WORK_DIR>
 ```
-For example,
+For example, our models use 3 RTX Titan GPUs for training
 ```shell
-./tools/dist_train.sh configs/faster_rcnn_r50_drfpn_1x.py 8 --validate --work_dir faster_rcnn_r50_augfpn_1x
+./tools/dist_train.sh configs/faster_rcnn_r50_drfpn_1x.py 3
 ```
 
-see more details at [mmdetection](https://github.com/open-mmlab/mmdetection)
+see more details at [mmdetection](https://github.com/open-mmlab/mmdetection).
 
 
-Testing
------------
-```shell
-python tools/test.py <CONFIG_FILE> <CHECKPOINT_FILE> --gpus <GPU_NUM> --out <OUT_FILE> --eval <EVAL_TYPE>
-```
-When test results of detection, use `--eval bbox`. When test results of instance segmentation, use `--eval bbox segm`. See more details at [mmdetection](https://github.com/open-mmlab/mmdetection).
-
-For example,
-```shell
-python tools/test.py configs/mask_rcnn_r50_augfpn_1x.py <CHECKPOINT_FILE> --gpus 8 --out results.pkl --eval bbox segm
-```
 
 ## Results on MS COCO testdev2017
 
